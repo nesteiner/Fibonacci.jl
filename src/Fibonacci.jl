@@ -1,6 +1,7 @@
 module Fibonacci
 
-import Base: iterate, length
+import Base: iterate, length, eltype
+import Base.Iterators.Take
 
 struct Fibs end
 
@@ -11,7 +12,8 @@ iterate(fibs::Fibs, state::T) where T = begin
 end
 
 length(fibs::Fibs) = typemax(Int)
-
+eltype(::Fibs) = Integer
+eltype(::Take{Fibs}) = Integer
 fibs = Fibs()
 
 export fibs

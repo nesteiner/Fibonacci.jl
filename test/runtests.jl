@@ -1,6 +1,8 @@
 using Fibonacci, Test
 
 @testset "test fibs" begin
-  @show collect(Iterators.take(fibs, 10))
-  @show collect(Iterators.take(fibs, 100))
+  println(collect(Iterators.take(fibs, 10)))
+
+  partfibs = collect(Iterators.take(fibs, 10))
+  println(eltype(partfibs))
 end
